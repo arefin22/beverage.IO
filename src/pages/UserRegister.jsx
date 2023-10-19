@@ -7,8 +7,23 @@ const handleRegister = (e) => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    const values = {name, email, password}
+    const values = { name, email, password }
     console.log(values);
+    fetch('https://beverage-server-site.vercel.app/users', {
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+        },
+        body: JSON.stringify(values),
+
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.insertedId) {
+                form.reset();
+            }
+            console.log(data)
+        })
 }
 
 
