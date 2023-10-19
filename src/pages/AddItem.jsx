@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 const AddItem = () => {
 
+
     const handleProductAdd = e => {
         e.preventDefault();
         const form = e.target;
@@ -13,7 +14,22 @@ const AddItem = () => {
         const description = form.description.value;
         const photo = form.photo.value;
         const newItemData = { name, brand, type, price, rating, description, photo }
-        console.log(newItemData);
+        console.log(typeof newItemData);
+
+        fetch("http://localhost:5000/items", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(newItemData),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if(data.insertedId){
+                    form.reset();   
+                }
+            });
     }
 
     return (
