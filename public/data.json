@@ -1,0 +1,228 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "name": "Coca-Cola",
+            "brand_name": "Coca-Cola",
+            "type": "Beverage",
+            "price": "$1.50",
+            "short_description": "Classic carbonated soft drink."
+        },
+        {
+            "id": 2,
+            "name": "Coca-Cola",
+            "brand_name": "Diet Coke",
+            "type": "Beverage",
+            "price": "$1.50",
+            "short_description": "Low-calorie carbonated soft drink."
+        },
+        {
+            "id": 3,
+            "name": "Coca-Cola",
+            "brand_name": "Coca-Cola Zero Sugar",
+            "type": "Beverage",
+            "price": "$1.50",
+            "short_description": "Zero-calorie carbonated soft drink."
+        },
+        {
+            "id": 4,
+            "name": "Coca-Cola",
+            "brand_name": "Sprite",
+            "type": "Beverage",
+            "price": "$1.50",
+            "short_description": "Lemon-lime flavored carbonated soft drink."
+        },
+        {
+            "id": 5,
+            "name": "McDonald's",
+            "brand_name": "Big Mac",
+            "type": "Burger",
+            "price": "$4.99",
+            "short_description": "Iconic double-decker burger with special sauce."
+        },
+        {
+            "id": 6,
+            "name": "McDonald's",
+            "brand_name": "McChicken",
+            "type": "Burger",
+            "price": "$3.99",
+            "short_description": "Delicious chicken sandwich with lettuce and mayo."
+        },
+        {
+            "id": 7,
+            "name": "McDonald's",
+            "brand_name": "French Fries",
+            "type": "Side",
+            "price": "$2.49",
+            "short_description": "Crispy golden fries seasoned to perfection."
+        },
+        {
+            "id": 8,
+            "name": "McDonald's",
+            "brand_name": "McFlurry",
+            "type": "Dessert",
+            "price": "$2.99",
+            "short_description": "Creamy soft-serve ice cream with toppings."
+        },
+        {
+            "id": 9,
+            "name": "Starbucks",
+            "brand_name": "Caffè Americano",
+            "type": "Coffee",
+            "price": "$2.79",
+            "short_description": "Espresso with hot water, creating a strong, rich coffee."
+        },
+        {
+            "id": 10,
+            "name": "Starbucks",
+            "brand_name": "Caramel Macchiato",
+            "type": "Coffee",
+            "price": "$3.99",
+            "short_description": "Espresso with steamed milk, vanilla syrup, and caramel drizzle."
+        },
+        {
+            "id": 11,
+            "name": "Starbucks",
+            "brand_name": "Matcha Green Tea Latte",
+            "type": "Tea",
+            "price": "$4.49",
+            "short_description": "Creamy matcha green tea with steamed milk."
+        },
+        {
+            "id": 12,
+            "name": "Starbucks",
+            "brand_name": "Blueberry Muffin",
+            "type": "Pastry",
+            "price": "$2.99",
+            "short_description": "Moist muffin filled with blueberries."
+        },
+        {
+            "id": 13,
+            "name": "PepsiCo",
+            "brand_name": "Pepsi",
+            "type": "Beverage",
+            "price": "$1.50",
+            "short_description": "Classic cola with a refreshing taste."
+        },
+        {
+            "id": 14,
+            "name": "PepsiCo",
+            "brand_name": "Mountain Dew",
+            "type": "Beverage",
+            "price": "$1.50",
+            "short_description": "Citrus-flavored high-energy soft drink."
+        },
+        {
+            "id": 15,
+            "name": "PepsiCo",
+            "brand_name": "Doritos",
+            "type": "Snack",
+            "price": "$2.99",
+            "short_description": "Crunchy tortilla chips with bold flavors."
+        },
+        {
+            "id": 16,
+            "name": "PepsiCo",
+            "brand_name": "Lay's Classic",
+            "type": "Snack",
+            "price": "$2.49",
+            "short_description": "Thin and crispy potato chips seasoned with salt."
+        },
+        {
+            "id": 17,
+            "name": "Nestlé",
+            "brand_name": "Nescafe",
+            "type": "Coffee",
+            "price": "$5.99",
+            "short_description": "Instant coffee with a rich, aromatic flavor."
+        },
+        {
+            "id": 18,
+            "name": "Nestlé",
+            "brand_name": "Kit Kat",
+            "type": "Chocolate",
+            "price": "$1.29",
+            "short_description": "Crunchy chocolate-covered wafer bar."
+        },
+        {
+            "id": 19,
+            "name": "Nestlé",
+            "brand_name": "Maggi",
+            "type": "Instant Noodles",
+            "price": "$0.99",
+            "short_description": "Quick and easy instant noodles in various flavors."
+        },
+        {
+            "id": 20,
+            "name": "Nestlé",
+            "brand_name": "Nestea",
+            "type": "Iced Tea",
+            "price": "$1.99",
+            "short_description": "Refreshing iced tea in a variety of flavors."
+        },
+        {
+            "id": 21,
+            "name": "Kellogg's",
+            "brand_name": "Corn Flakes",
+            "type": "Cereal",
+            "price": "$3.49",
+            "short_description": "Crispy flakes made from toasted corn."
+        },
+        {
+            "id": 22,
+            "name": "Kellogg's",
+            "brand_name": "Frosted Flakes",
+            "type": "Cereal",
+            "price": "$3.99",
+            "short_description": "Sweet and frosted corn flakes for a delicious breakfast."
+        },
+        {
+            "id": 23,
+            "name": "Kellogg's",
+            "brand_name": "Special K",
+            "type": "Cereal",
+            "price": "$4.29",
+            "short_description": "Nutritious cereal made with rice, wheat, and barley."
+        },
+        {
+            "id": 24,
+            "name": "Kellogg's",
+            "brand_name": "Pop-Tarts",
+            "type": "Pastry",
+            "price": "$2.99",
+            "short_description": "Toaster pastries with various fruity fillings."
+        }
+    ],
+    "logos": [
+        {
+            "id": 1,
+            "brandName": "Nestlé",
+            "imageURL": "https://i.ibb.co/VpwzPT4/Nestl.jpg"
+        },
+        {
+            "id": 2,
+            "brandName": "PepsiCo",
+            "imageURL": "https://i.ibb.co/XZYVL7H/PepsiCo.png"
+        },
+        {
+            "id": 3,
+            "brandName": "Starbucks",
+            "imageURL": "https://i.ibb.co/D5K2btm/Starbucks.png"
+        },
+        {
+            "id": 4,
+            "brandName": "McDonald's",
+            "imageURL": "https://i.ibb.co/25svzBL/Mc-Donalds.jpg"
+        },
+        {
+            "id": 5,
+            "brandName": "Coca-Cola",
+            "imageURL": "https://i.ibb.co/XJjLkD8/coce.png"
+        },
+        {
+            "id": 6,
+            "brandName": "Kellogg's",
+            "imageURL": "https://i.ibb.co/b7ntDpk/Kelloggs.png"
+        }
+    ]
+}
