@@ -1,23 +1,19 @@
 /* eslint-disable react/prop-types */
 
 import { useLoaderData } from "react-router-dom";
+import Item from "../components/Item";
 
 
 const Items = () => {
 
-    const {items} = useLoaderData()
+    const allItems = useLoaderData()
 
-    console.log(items);
+    console.log(allItems);
 
     return (
-        <div>
+        <div className="grid lg:grid-cols-3 mx-auto gap-6"> 
             {
-                Array.isArray(items) && items.map(item => (
-                    <div key={item.id}>
-                        <h2>{item.brand_name}</h2>
-                        <h2>{item.name}</h2>
-                    </div>
-                ))
+                Array.isArray(allItems) && allItems?.map(item => <Item key={item._id} item ={item}></Item>)
             }
         </div>
     );
