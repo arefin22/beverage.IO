@@ -46,8 +46,9 @@ const router = createBrowserRouter([
         loader: () => fetch('https://beverage-server-site.vercel.app/brands')
       },
       {
-        path: '/items',
+        path: '/items/:id',
         element: <Items />,
+        // loader:() => fetch('https://beverage-server-site.vercel.app/items')
       },
       {
         path: '/users',

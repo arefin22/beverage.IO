@@ -1,4 +1,5 @@
 import Banner from "../components/Banner";
+import Contact from "../components/Contact";
 import Brands from "./Brands";
 // import Items from "./Items";
 
@@ -8,8 +9,7 @@ const Home = () => {
         <div>
             <Banner />
             <Brands />
-            {/* <Items /> */}
-            <p>Home Section</p>
+            <Contact />
         </div>
     );
 };
