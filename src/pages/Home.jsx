@@ -1,14 +1,14 @@
 import Banner from "../components/Banner";
 import Brands from "./Brands";
-import Items from "./Items";
+// import Items from "./Items";
 
 const Home = () => {
 
     return (
         <div>
             <Banner />
-            <Brands/>
-            <Items />
+            <Brands />
+            {/* <Items /> */}
             <p>Home Section</p>
         </div>
     );

@@ -6,8 +6,8 @@ const Item = ({ item }) => {
 
 
     return (
-        <div className="card w-96 glass">
-            <figure><img src={item.photo} alt="car!" /></figure>
+        <div className="card glass">
+            <figure className="max-h-72"><img src={item.photo} alt={item.name} /></figure>
             <div className="card-body">
                 <div>
                     <div className="badge badge-outline">{item.brand}</div>

@@ -21,25 +21,8 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        loader: () => {
-          fetch('https://beverage-server-site.vercel.app/brands')
-            .then(response => response.json())
-            .then(data => {
-              console.log(data);
-            })
-            .catch(error => {
-              console.error(error);
-            });
-
-          fetch('https://beverage-server-site.vercel.app/items')
-            .then(response => response.json())
-            .then(data => {
-              console.log(data);
-            })
-            .catch(error => {
-              console.error(error);
-            });
-        },
+        loader: () => fetch('https://beverage-server-site.vercel.app/brands')
+          // fetch('https://beverage-server-site.vercel.app/items')
       },
       {
         path: '/register',
@@ -65,7 +48,6 @@ const router = createBrowserRouter([
       {
         path: '/items',
         element: <Items />,
-        loader: () => fetch('https://beverage-server-site.vercel.app/items')
       },
       {
         path: '/users',

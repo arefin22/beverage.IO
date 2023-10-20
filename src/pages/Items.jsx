@@ -1,20 +1,33 @@
 /* eslint-disable react/prop-types */
 
-import { useLoaderData } from "react-router-dom";
-import Item from "../components/Item";
+// import { useLoaderData } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+// import Item from "../components/Item";
+import ItemsBanner from "../components/ItemsBanner";
 
 
 const Items = () => {
 
-    const allItems = useLoaderData()
+    // const allItems = useLoaderData()
+    const location = useLocation();
+    const filterData = location.state?.filterData || [];
 
-    console.log(allItems);
+    console.log("Filter Data in Items",filterData);
+
+    // console.log(allItems);
 
     return (
-        <div className="grid lg:grid-cols-3 mx-auto gap-6"> 
-            {
-                Array.isArray(allItems) && allItems?.map(item => <Item key={item._id} item ={item}></Item>)
-            }
+        <div>
+
+            <div>
+                <ItemsBanner />
+            </div>
+
+            <div className="grid lg:grid-cols-3 container mx-auto  gap-6">
+                {
+                    // Array.isArray(allItems) && allItems?.map(item => <Item key={item._id} item={item}></Item>)
+                }
+            </div>
         </div>
     );
 };

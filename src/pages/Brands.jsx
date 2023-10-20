@@ -1,13 +1,35 @@
 /* eslint-disable react/prop-types */
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Brand from "../components/Brand";
-// import { useState } from "react";
+// import Items from "./Items";
+
 
 const Brands = () => {
+    const navigate = useNavigate()
 
     const allBrands = useLoaderData()
     // const [brandData, setBrandData] = useState(allBrands)
-    console.log(allBrands);
+
+    // const handleFilter = filter => {
+    //     if(filter === "")
+    // }
+
+    // const [brandFilterData, setBrandFilterData] = useState(null)
+    // console.log("Use State",brandFilterData);
+
+
+    const handleBrandClick = (brandName) => {
+        fetch('http://localhost:5000/items')
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data);
+            const filterData = data.filter( file =>  file.brand === brandName )
+            console.log(filterData);
+            // setBrandFilterData(filterData)
+            navigate(`/items`, { filterData })
+        })
+    }
+
 
 
     return (
@@ -16,7 +38,9 @@ const Brands = () => {
             <div className="grid lg:grid-cols-6 grid-cols-2 gap-3">
                 {
                     Array.isArray(allBrands) && allBrands?.map(brand => (
-                        <Brand key={brand._id} brand={brand} />
+                        <div key={brand._id} onClick={() => handleBrandClick(brand.brandName)}>
+                            <Link to={`/items`}><Brand brand={brand} /></Link>
+                        </div>
                     ))
                 }
             </div>
