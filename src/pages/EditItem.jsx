@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const EditItem = () => {
 
@@ -58,7 +59,7 @@ const EditItem = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-                alert('Edited Successfully')
+                toast('Edited Successfully')
             });
 
     }
