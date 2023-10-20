@@ -1,6 +1,36 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 const EditItem = () => {
+
+    const { id } = useParams()
+    // console.log("Fetched ID from Item", id);
+    const [idData, setIdData] = useState({
+        _id: '',
+        name: '',
+        brand: '',
+        type: '',
+        price: '',
+        rating: '',
+        description: '',
+        photo: '',
+      });
+
+    // console.log("This id is from state", idData._id);
+
+    useEffect(() => {
+        if (id) {
+            fetch('http://localhost:5000/items')
+                .then(res => res.json())
+                .then(data => {
+                    const theData = data?.find(data => data._id === id)
+                    setIdData(theData);
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+    }, [id])
 
     const handleProductEdit = e => {
         e.preventDefault();
@@ -13,7 +43,24 @@ const EditItem = () => {
         const description = form.description.value;
         const photo = form.photo.value;
         const newItemData = { name, brand, type, price, rating, description, photo }
-        console.log(newItemData);
+
+        // console.log(newItemData);
+
+        // console.log("In Handle data", idData._id);
+
+        fetch(`http://localhost:5000/items/${idData._id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newItemData),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                alert('Edited Successfully')
+            });
+
     }
 
     return (
@@ -34,8 +81,8 @@ const EditItem = () => {
                             <div className="container mx-auto">
                                 <form onSubmit={handleProductEdit}>
                                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                                        <input type="text" name="name" placeholder="Add Item Name" className="input bg-white input-bordered input-error w-full" />
-                                        <select name="brand" className="select bg-white select-error w-full" defaultValue="">
+                                        <input type="text" defaultValue={idData?.name} name="name" placeholder="Add Item Name" className="input bg-white input-bordered input-error w-full" />
+                                        <select name="brand" className="select bg-white select-error w-full" defaultValue={idData?.brand}>
                                             <option value="" disabled>Select Brand</option>
                                             <option value="Coca-Cola">Coca-Cola</option>
                                             <option value="McDonalds">McDonalds</option>
@@ -44,12 +91,12 @@ const EditItem = () => {
                                             <option value="Nestlé">Nestlé</option>
                                             <option value="Kelloggs">Kelloggs</option>
                                         </select>
-                                        <input type="text" name="type" placeholder="Type (Drinks, Snacks, Sweets, etc)" className="input bg-white input-bordered input-error w-full" />
-                                        <input type="text" name="price" placeholder="Item Price" className="input bg-white input-bordered input-error w-full" />
-                                        <input type="text" name="rating" placeholder="Rating (In 5 star)" className="input bg-white input-bordered input-error w-full" />
-                                        <input type="text" name="description" placeholder="Short description" className="input bg-white input-bordered input-error w-full" />
+                                        <input type="text" name="type" placeholder="Type (Drinks, Snacks, Sweets, etc)" defaultValue={idData?.type} className="input bg-white input-bordered input-error w-full" />
+                                        <input type="text" name="price" placeholder="Item Price" defaultValue={idData?.price} className="input bg-white input-bordered input-error w-full" />
+                                        <input type="text" name="rating" placeholder="Rating (In 5 star)" defaultValue={idData?.rating} className="input bg-white input-bordered input-error w-full" />
+                                        <input type="text" name="description" placeholder="Short description" defaultValue={idData?.description} className="input bg-white input-bordered input-error w-full" />
                                     </div>
-                                    <input type="text" name="photo" placeholder="Enter photo URL" className="my-8 input bg-white input-bordered input-error w-full" />
+                                    <input type="text" name="photo" placeholder="Enter photo URL" defaultValue={idData?.photo} className="my-8 input bg-white input-bordered input-error w-full" />
                                     <input type="submit" value="Add New Item" className="btn btn-outline btn-success w-full" />
                                 </form>
                             </div>

@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
 import StarRating from "./StarRating";
 
 const Item = ({ item }) => {
-
 
     return (
         <div className="card glass">
@@ -19,8 +19,9 @@ const Item = ({ item }) => {
                     {/* <p><span className="font-medium">Rating</span> : {item.rating}</p> */}
                     <p><span className="font-medium">Price</span> : ${item.price}</p>
                 </div>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Learn now!</button>
+                <div className="card-actions justify-center">
+                    <Link to={`/details/${item._id}`} className="btn btn-outline btn-primary">Details</Link>
+                    <Link to={`/editItem/${item._id}`} className="btn btn-outline btn-secondary">Update</Link>
                 </div>
             </div>
         </div>

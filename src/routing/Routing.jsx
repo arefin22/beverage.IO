@@ -11,6 +11,8 @@ import Brands from "../pages/Brands";
 import EditItem from "../pages/EditItem";
 import Items from "../pages/Items";
 import Users from "../pages/Users";
+import Details from "../pages/Details";
+import Cart from "../components/Cart";
 
 const router = createBrowserRouter([
   {
@@ -21,8 +23,8 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        loader: () => fetch('https://beverage-server-site.vercel.app/brands')
-          // fetch('https://beverage-server-site.vercel.app/items')
+        loader: () => fetch('http://localhost:5000/brands')
+          // fetch('http://localhost:5000/items')
       },
       {
         path: '/register',
@@ -37,24 +39,35 @@ const router = createBrowserRouter([
         element: <AddItem />
       },
       {
-        path: '/editItem',
+        path: '/editItem/:id',
         element: <EditItem />
       },
       {
         path: '/brands',
         element: <Brands />,
-        loader: () => fetch('https://beverage-server-site.vercel.app/brands')
+        loader: () => fetch('http://localhost:5000/brands')
       },
       {
         path: '/items/:id',
         element: <Items />,
-        // loader:() => fetch('https://beverage-server-site.vercel.app/items')
+        // loader:() => fetch('http://localhost:5000/items')
       },
       {
         path: '/users',
         element: <Users />,
-        loader: () => fetch(`https://beverage-server-site.vercel.app/users`)
+        loader: () => fetch(`http://localhost:5000/users`)
       },
+      {
+        path: '/details/:id',
+        element: <Details />,
+        // loader: ({params}) => fetch(`http://localhost:5000/items/${params._id}`)
+      },
+      {
+        path: '/cart',
+        element: <Cart />,
+        // loader: ({params}) => fetch(`http://localhost:5000/items/${params._id}`)
+      },
+      
 
     ],
   },

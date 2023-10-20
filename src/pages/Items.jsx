@@ -16,19 +16,14 @@ const Items = () => {
     const [brandData, setBrandData] = useState(null)
     const [brandItems, setBrandItems] = useState([])
 
-    // console.log('Use State', typeof brandData);
-    // console.log('Use State 2nd',  brandItems);
-
     useEffect(() => {
         if (id) {
-            console.log("from use Effect",id);
-            fetch('https://beverage-server-site.vercel.app/brands')
+            // console.log("from use Effect",id);
+            fetch('http://localhost:5000/brands')
                 .then(res => res.json())
                 .then(data => {
-                    // console.log(data);
                     data?.map(theData => {
                         if (theData?._id === id) {
-                            // console.log('brand Name', theData.brandName);
                             setBrandData(theData.brandName)
                         }
                     })
@@ -38,7 +33,7 @@ const Items = () => {
 
     useEffect(() => {
         if(brandData){
-            fetch('https://beverage-server-site.vercel.app/items')
+            fetch('http://localhost:5000/items')
             .then(res => res.json())
             .then(data => {
                 // console.log('data from second use effect',data.brand);

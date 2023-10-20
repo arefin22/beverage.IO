@@ -9,7 +9,7 @@ const handleRegister = (e) => {
     const password = form.password.value;
     const values = { name, email, password }
     console.log(values);
-    fetch('https://beverage-server-site.vercel.app/users', {
+    fetch('http://localhost:5000/users', {
         method: "POST",
         headers: {
             "content-type": "application/json",

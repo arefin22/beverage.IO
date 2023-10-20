@@ -17,7 +17,7 @@ const AddItem = () => {
         const newItemData = { name, brand, type, price, rating, description, photo }
         console.log(typeof newItemData);
 
-        fetch("https://beverage-server-site.vercel.app/items", {
+        fetch("http://localhost:5000/items", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
