@@ -70,6 +70,8 @@ const Items = () => {
             </div>
 
             <div className="mx-4">
+                <h3 className="text-5xl drop-shadow-lg text-center py-10  text-yellow-500">{brandData}</h3>
+                <hr className="max-w-xl mx-auto mb-10" />
                 <div className="grid lg:grid-cols-3 container mx-auto  gap-6">
                     {
                         Array.isArray(brandItems) && brandItems?.map(item => <Item key={item._id} item={item}></Item>)

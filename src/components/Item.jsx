@@ -3,9 +3,9 @@
 import { Link } from "react-router-dom";
 import StarRating from "./StarRating";
 
-const Item = ({ item }) => {
 
-    console.log(item);
+
+const Item = ({ item }) => {
 
     return (
         <div className="card glass">
@@ -30,7 +30,7 @@ const Item = ({ item }) => {
                     </div>
                 </>
 
-                   :
+                    :
                     <div className="mx-auto text-center">
                         <Link className="btn btn-outline btn-error" to={'/addItem'}> Add Some Item To Show </Link>
                         <br />
