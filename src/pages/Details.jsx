@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 const Details = () => {
@@ -21,7 +22,8 @@ const Details = () => {
         }
     }, [id])
 
-    const addToCart = ({e}) => {
+    const addToCart = (e) => {
+        console.log(e);
         fetch('http://localhost:5000/cart', {
         method: "POST",
         headers: {
@@ -32,8 +34,13 @@ const Details = () => {
     })
         .then(res => res.json())
         .then(data => {
-            if (data?.insertedId) {
-                console.log("Added");
+            if (data?._id) {
+                if(details?.map(detailsData => detailsData._id !== data._id)){
+                    toast('Added Successfully')
+                }
+                else{
+                    toast('Already Added')
+                }
             }
             console.log(data)
         })
@@ -56,7 +63,7 @@ const Details = () => {
                     <hr />
                     <Link to={`/editItem/${details?._id}`} className="btn btn-outline btn-secondary">Update</Link>
                     <br/>
-                    <Link onClick={()=>addToCart(details?._id)} className="btn btn-outline btn-error">Add To Cart</Link>
+                    <Link onClick={()=>addToCart(details)} className="btn btn-outline btn-error">Add To Cart</Link>
 
                 </div>
             </div>
