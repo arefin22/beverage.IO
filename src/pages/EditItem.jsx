@@ -69,8 +69,8 @@ const EditItem = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
-                toast('Edited Successfully')
+                // console.log(data);
+                toast('Edited Successfully' , data)
             });
 
     }

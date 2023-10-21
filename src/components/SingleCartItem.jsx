@@ -7,6 +7,8 @@ const SingleCartItem = ({ cartItem, setCartItems, cartItems }) => {
 
     const { _id, brand, name, price, type, photo } = cartItem
 
+    // console.log("Updated Cart Items ", cartItems);
+
     const handleDeleteFromCart = _id => {
         fetch(`https://beverage-server-site.vercel.app/cart/${_id}`, {
             method: 'DELETE'
@@ -17,7 +19,7 @@ const SingleCartItem = ({ cartItem, setCartItems, cartItems }) => {
                 if (data.deletedCount > 0) {
                     const remainingItems = cartItems?.filter(item => item._id !== _id);
                     toast('Item Deleted - if Not Updated Please Refresh')
-                    console.log('Cart Items', remainingItems);    
+                    // console.log('Cart Items', remainingItems);    
                     setCartItems(remainingItems);
                 }
             })

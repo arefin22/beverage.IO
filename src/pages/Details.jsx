@@ -8,7 +8,7 @@ const Details = () => {
 
     const { id } = useParams()
     const [details, setDetails] = useState(null)
-    console.log(id);
+    // console.log(id);
     useEffect(() => {
         if (id) {
             fetch('https://beverage-server-site.vercel.app/items')
@@ -26,7 +26,7 @@ const Details = () => {
     const addToCart = (e) => {
         const { name, brand, type, rating, photo, price, description } = e
         const data = { name, brand, type, rating, photo, price, description }
-        console.log(e , data);
+        // console.log(e , data);
         // fetch('https://beverage-server-site.vercel.app/cart', {
         fetch('https://beverage-server-site.vercel.app/cart', {
             method: "POST",
@@ -47,7 +47,7 @@ const Details = () => {
                     //     toast('Already Added')
                     // }
                 }
-                console.log(data)
+                // console.log(data)
             })
     }
 

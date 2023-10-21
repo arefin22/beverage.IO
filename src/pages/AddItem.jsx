@@ -15,7 +15,7 @@ const AddItem = () => {
         const description = form.description.value;
         const photo = form.photo.value;
         const newItemData = { name, brand, type, price, rating, description, photo }
-        console.log(typeof newItemData);
+        // console.log(typeof newItemData);
 
         fetch("https://beverage-server-site.vercel.app/items", {
             method: "POST",
@@ -26,7 +26,7 @@ const AddItem = () => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 if(data.insertedId){
                     toast('Product Added Successfully')
                     form.reset();   
