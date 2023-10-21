@@ -15,7 +15,8 @@ const EditItem = () => {
         rating: '',
         description: '',
         photo: '',
-      });
+    });
+    // const [brands, setBrands] = useState([])
 
     // console.log("This id is from state", idData._id);
 
@@ -31,6 +32,16 @@ const EditItem = () => {
                     console.error('Error fetching data:', error);
                 });
         }
+
+        // fetch('http://localhost:5000/brands')  // Update the URL accordingly
+        //     .then((res) => res.json())
+        //     .then((brands) => {
+        //         // Assuming your brands data looks like [{ name: 'Apple' }, { name: 'Samsung' }, ...]
+        //         setBrands(brands); // Update your state for brands
+        //     })
+        //     .catch((error) => {
+        //         console.error(error);
+        //     });
     }, [id])
 
     const handleProductEdit = e => {
@@ -92,6 +103,15 @@ const EditItem = () => {
                                             <option value="Nestlé">Nestlé</option>
                                             <option value="Kelloggs">Kelloggs</option>
                                         </select>
+
+                                        {/* <select name="brand" className="select select-error w-full border" value={idData?.brand}>
+                                            <option value="" disabled>Select Brand</option>
+                                            {brands.map((brand) => (
+                                                <option key={brand._id} value={brand.name}>
+                                                    {brand.name}
+                                                </option>
+                                            ))}
+                                        </select> */}
                                         <input type="text" name="type" placeholder="Type (Drinks, Snacks, Sweets, etc)" defaultValue={idData?.type} className="input bg-white input-bordered input-error w-full" />
                                         <input type="text" name="price" placeholder="Item Price" defaultValue={idData?.price} className="input bg-white input-bordered input-error w-full" />
                                         <input type="text" name="rating" placeholder="Rating (In 5 star)" defaultValue={idData?.rating} className="input bg-white input-bordered input-error w-full" />

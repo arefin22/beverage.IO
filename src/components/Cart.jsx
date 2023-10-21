@@ -1,11 +1,14 @@
 // import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import SingleCartItem from "./SingleCartItem";
+import { useState } from "react";
 
 const Cart = () => {
 
     const allCartItems = useLoaderData()
     console.log("All Cart Items", allCartItems);
+
+    const [cartItems , setCartItems] = useState(allCartItems)
 
 
     return (
@@ -23,7 +26,7 @@ const Cart = () => {
                 {
                     allCartItems?.map(cartItem => (
 
-                        <SingleCartItem key={cartItem._id} cartItem={cartItem}></SingleCartItem>
+                        <SingleCartItem key={cartItem._id} cartItems={cartItems} setCartItems={setCartItems} cartItem={cartItem}></SingleCartItem>
 
                     ))
                 }
