@@ -19,7 +19,7 @@ const Items = () => {
     useEffect(() => {
         if (id) {
             // console.log("from use Effect",id);
-            fetch('http://localhost:5000/brands')
+            fetch('https://beverage-server-site.vercel.app/brands')
                 .then(res => res.json())
                 .then(data => {
                     data?.map(theData => {
@@ -32,22 +32,22 @@ const Items = () => {
     }, [id])
 
     useEffect(() => {
-        if(brandData){
-            fetch('http://localhost:5000/items')
-            .then(res => res.json())
-            .then(data => {
-                // console.log('data from second use effect',data.brand);
-                // data.map(theData => {
-                //     if(theData.brand === brandData){
-                //         setBrandItems(data);
-                //     }
-                // })
-                const filteredData = data.filter(item => item.brand === brandData);
-                // console.log(filteredData);
-                setBrandItems(filteredData);
-            })
+        if (brandData) {
+            fetch('https://beverage-server-site.vercel.app/items')
+                .then(res => res.json())
+                .then(data => {
+                    // console.log('data from second use effect',data.brand);
+                    // data.map(theData => {
+                    //     if(theData.brand === brandData){
+                    //         setBrandItems(data);
+                    //     }
+                    // })
+                    const filteredData = data.filter(item => item.brand === brandData);
+                    // console.log(filteredData);
+                    setBrandItems(filteredData);
+                })
         }
-    },[brandData, brandItems])
+    }, [brandData, brandItems])
 
 
 
@@ -69,10 +69,12 @@ const Items = () => {
                 <ItemsBanner />
             </div>
 
-            <div className="grid lg:grid-cols-3 container mx-auto  gap-6">
-                {
-                    Array.isArray(brandItems) && brandItems?.map(item => <Item key={item._id} item={item}></Item>)
-                }
+            <div className="mx-4">
+                <div className="grid lg:grid-cols-3 container mx-auto  gap-6">
+                    {
+                        Array.isArray(brandItems) && brandItems?.map(item => <Item key={item._id} item={item}></Item>)
+                    }
+                </div>
             </div>
         </div>
     );

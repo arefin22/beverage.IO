@@ -35,7 +35,7 @@ const UserRegister = () => {
             .catch(err => toast('Try Again Please', err))
 
 
-            fetch('http://localhost:5000/users', {
+            fetch('https://beverage-server-site.vercel.app/users', {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",

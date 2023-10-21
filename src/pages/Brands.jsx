@@ -16,7 +16,7 @@ const Brands = () => {
 
 
     return (
-        <div className="container mx-auto py-16">
+        <div className="container mx-auto px-4 py-16">
             <h3 className="text-5xl drop-shadow-lg text-center py-10  text-yellow-500">We Serve</h3>
             <div className="grid lg:grid-cols-6 grid-cols-2 gap-3">
                 {

@@ -22,7 +22,7 @@ const EditItem = () => {
 
     useEffect(() => {
         if (id) {
-            fetch('http://localhost:5000/items')
+            fetch('https://beverage-server-site.vercel.app/items')
                 .then(res => res.json())
                 .then(data => {
                     const theData = data?.find(data => data._id === id)
@@ -33,7 +33,7 @@ const EditItem = () => {
                 });
         }
 
-        // fetch('http://localhost:5000/brands')  // Update the URL accordingly
+        // fetch('https://beverage-server-site.vercel.app/brands')  // Update the URL accordingly
         //     .then((res) => res.json())
         //     .then((brands) => {
         //         // Assuming your brands data looks like [{ name: 'Apple' }, { name: 'Samsung' }, ...]
@@ -60,7 +60,7 @@ const EditItem = () => {
 
         // console.log("In Handle data", idData._id);
 
-        fetch(`http://localhost:5000/items/${idData._id}`, {
+        fetch(`https://beverage-server-site.vercel.app/items/${idData._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

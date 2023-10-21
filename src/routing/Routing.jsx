@@ -24,8 +24,8 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        loader: () => fetch('http://localhost:5000/brands')
-          // fetch('http://localhost:5000/items')
+        loader: () => fetch('https://beverage-server-site.vercel.app/brands')
+          // fetch('https://beverage-server-site.vercel.app/items')
       },
       {
         path: '/register',
@@ -46,27 +46,27 @@ const router = createBrowserRouter([
       {
         path: '/brands',
         element: <Brands />,
-        loader: () => fetch('http://localhost:5000/brands')
+        loader: () => fetch('https://beverage-server-site.vercel.app/brands')
       },
       {
         path: '/items/:id',
         element: <Items />,
-        // loader:() => fetch('http://localhost:5000/items')
+        // loader:() => fetch('https://beverage-server-site.vercel.app/items')
       },
       {
         path: '/users',
         element: <Users />,
-        loader: () => fetch(`http://localhost:5000/users`)
+        loader: () => fetch(`https://beverage-server-site.vercel.app/users`)
       },
       {
         path: '/details/:id',
         element: <PrivateRoute><Details /></PrivateRoute>,
-        // loader: ({params}) => fetch(`http://localhost:5000/items/${params._id}`)
+        // loader: ({params}) => fetch(`https://beverage-server-site.vercel.app/items/${params._id}`)
       },
       {
         path: '/cart',
         element: <PrivateRoute><Cart /></PrivateRoute>,
-        loader: () => fetch(`http://localhost:5000/cart`)
+        loader: () => fetch(`https://beverage-server-site.vercel.app/cart`)
       },
       
 

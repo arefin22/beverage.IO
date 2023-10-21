@@ -15,8 +15,8 @@ const Users = () => {
 
     const handleDelete = (_id) => {
         console.log(_id);
-        // const URL = `http://localhost:5001/users/${_id}`;
-        fetch(`http://localhost:5001/users/${_id}`, {
+        // const URL = `https://localhost:5001/users/${_id}`;
+        fetch(`https://localhost:5001/users/${_id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

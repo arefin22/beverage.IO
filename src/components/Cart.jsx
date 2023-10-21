@@ -12,7 +12,7 @@ const Cart = () => {
 
 
     return (
-        <table className="table container my-52 mx-auto">
+        <table className="overflow-x-hidden table container my-20 mx-auto">
             {/* head */}
             <thead>
                 <tr>

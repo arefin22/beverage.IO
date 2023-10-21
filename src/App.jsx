@@ -8,12 +8,12 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
 
   return (
-    <>
+    <div className='overflow-x-hidden'>
       <Navbar />
       <Outlet />
       <Footer />
       <ToastContainer />
-    </>
+    </div>
   )
 }
 

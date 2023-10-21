@@ -1,13 +1,14 @@
 /* eslint-disable react/prop-types */
 
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const SingleCartItem = ({ cartItem, setCartItems, cartItems }) => {
 
     const { _id, brand, name, price, type, photo } = cartItem
 
     const handleDeleteFromCart = _id => {
-        fetch(`http://localhost:5000/cart/${_id}`, {
+        fetch(`https://beverage-server-site.vercel.app/cart/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -15,6 +16,7 @@ const SingleCartItem = ({ cartItem, setCartItems, cartItems }) => {
                 console.log("data", data);
                 if (data.deletedCount > 0) {
                     const remainingItems = cartItems?.filter(item => item._id !== _id);
+                    toast('Item Deleted - if Not Updated Please Refresh')
                     console.log('Cart Items', remainingItems);    
                     setCartItems(remainingItems);
                 }
