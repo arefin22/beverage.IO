@@ -13,6 +13,7 @@ import Items from "../pages/Items";
 import Users from "../pages/Users";
 import Details from "../pages/Details";
 import Cart from "../components/Cart";
+import PrivateRoute from "../Auth/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -36,11 +37,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/addItem',
-        element: <AddItem />
+        element: <PrivateRoute><AddItem /></PrivateRoute>
       },
       {
         path: '/editItem/:id',
-        element: <EditItem />
+        element: <PrivateRoute><EditItem /></PrivateRoute>
       },
       {
         path: '/brands',
@@ -59,12 +60,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/details/:id',
-        element: <Details />,
+        element: <PrivateRoute><Details /></PrivateRoute>,
         // loader: ({params}) => fetch(`http://localhost:5000/items/${params._id}`)
       },
       {
         path: '/cart',
-        element: <Cart />,
+        element: <PrivateRoute><Cart /></PrivateRoute>,
         loader: () => fetch(`http://localhost:5000/cart`)
       },
       

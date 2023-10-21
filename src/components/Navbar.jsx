@@ -1,18 +1,25 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Auth/AuthProvider";
 
 
 const Navbar = () => {
 
+    const { signOutFromSite, user } = useContext(AuthContext)
 
 
 
     const navLinks = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
-        <li><NavLink to={'/brands'}>Brands</NavLink></li>
-        <li><NavLink to={'/addItem'}>Add Item</NavLink></li>
-        <li><NavLink to={'/cart'}>Cart</NavLink></li>
-        <li><NavLink to={'/register'}>Register</NavLink></li>
+        {user ? <li><NavLink to={'/addItem'}>Add Product</NavLink></li> : ""}
+        {user ? <li><NavLink to={'/cart'}>Cart</NavLink></li> : ''}
+        {/* <li><NavLink to={'/login'}>Login</NavLink></li> */}
     </>
+    const handleSignOut = () => {
+        signOutFromSite()
+            .then()
+            .catch()
+    }
 
 
     return (
@@ -40,24 +47,24 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <div className="flex justify-end items-center gap-7">
-                        <input type="checkbox" className="toggle toggle-accent"  />
-                        <div className="dropdown dropdown-end">
-                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        {
+                            user ?
+                                <div className="flex-none gap-2">
+                                    <div className="dropdown dropdown-end">
+                                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                            <div className="w-10 rounded-full">
+                                                <img src={user.photo || user.photoURL} />
+                                            </div>
+                                        </label>
+                                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-64">
+                                            <li><button>{user.email}</button></li>
+                                            <li><button onClick={handleSignOut}>Sign Out</button></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </label>
-                            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                                <li>
-                                    <a className="justify-between">
-                                        Profile
-                                        <span className="badge">New</span>
-                                    </a>
-                                </li>
-                                <li><a>Settings</a></li>
-                                <li><a>Logout</a></li>
-                            </ul>
-                        </div>
+                                :
+                                <Link to={'/login'}>Sign In</Link>
+                        }
                     </div>
                 </div>
             </div>

@@ -1,14 +1,28 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Auth/AuthProvider";
+import { toast } from "react-toastify";
 
 const UserLogin = () => {
+
+    const { signInUser, signInUsingPopup } = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate();
+
 
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        const values = {email, password}
-        console.log(values);
+        // const values = {email, password}
+        // console.log(values);
+        signInUser(email, password)
+            .then(res => {
+                toast('Log In Successful', res)
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(err => toast( 'Invalid Email or Password', err))
     }
 
 
@@ -25,6 +39,10 @@ const UserLogin = () => {
                         </div>
                     </form>
                     <p className="text-center">Are You New Here? <Link to={'/register'} className="text-sky-700 font-bold">Register</Link></p>
+                    <hr className="my-8 container" />
+                    <div className="text-center">
+                        <button className="btn btn-outline btn-info" onClick={signInUsingPopup}>Google</button>
+                    </div>
                 </div>
             </div>
         </div>
