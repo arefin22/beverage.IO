@@ -28,6 +28,9 @@ Beverage.io is your one-stop destination for a diverse range of beverages from m
 - **Deployment:** Firebase (for frontend), Vercel (for backend), MongoDB Atlas (for database hosting)
 
 
+
+
+
 **Beverage.io - Your Ultimate Beverage Destination**
   
 Explore, Order, and Enjoy a Variety of Beverages from Top Brands!
