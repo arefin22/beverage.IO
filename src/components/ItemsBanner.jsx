@@ -8,7 +8,7 @@ const ItemsBanner = () => {
 
 
     return (
-        <div className=" pb-40">
+        <div className="max-h-96 pb-40">
             <div className="carousel max-h-96  w-full ">
                 <div id="slide1" className="carousel-item relative w-full">
                     <figure className="flex items-center w-full"><img src="https://i.ibb.co/6R5BjbD/slide-3.jpg" className="max-h-screen w-full" /></figure>
