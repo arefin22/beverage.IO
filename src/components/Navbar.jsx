@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvider";
+import Switcher from "../Hooks/Switcher";
 
 
 const Navbar = () => {
@@ -13,7 +14,7 @@ const Navbar = () => {
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/addItem'}>Add Product</NavLink></li>
         <li><NavLink to={'/cart'}>Cart</NavLink></li>
-        
+
         {/* <li><NavLink to={'/login'}>Login</NavLink></li> */}
     </>
     const handleSignOut = () => {
@@ -48,6 +49,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <div className="flex justify-end items-center gap-7">
+                        <Switcher />
                         {
                             user ?
                                 <div className="flex-none gap-2">

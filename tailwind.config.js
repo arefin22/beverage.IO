@@ -9,6 +9,7 @@ export default {
       fontFamily:{
         Gothic : "'Gothic A1' ,  sans-serif",
       },
+      darkMode: "class",
       daisyui: {
         themes: ["light", "dark"],
       },
