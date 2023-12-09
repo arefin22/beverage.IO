@@ -2,7 +2,8 @@
 
 Beverage.io is your one-stop destination for a diverse range of beverages from multiple brands, all under a single roof. Whether you're craving the refreshing taste of sodas, the warmth of a cup of coffee, or the health benefits of teas, Beverage.io has got you covered. With a wide selection of beverages from various renowned brands, we offer a delightful experience to quench your thirst and satisfy your taste buds.
 
-### Site Live Link : https://beverage-io-d271b.web.app/
+### Site Live Link : [Beverage.IO](https://beverage-io-d271b.web.app)
+
 
 ## Table of Contents
 
